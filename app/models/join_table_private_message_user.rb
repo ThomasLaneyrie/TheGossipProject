@@ -1,0 +1,2 @@
+class JoinTablePrivateMessageUser < ApplicationRecord
+end
