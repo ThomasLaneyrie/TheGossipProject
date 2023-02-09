@@ -38,8 +38,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_09_175834) do
 
   create_table "private_messages", force: :cascade do |t|
     t.text "content"
-    t.integer "recipient_id"
     t.integer "sender_id"
+    t.integer "recipient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["recipient_id"], name: "index_private_messages_on_recipient_id"

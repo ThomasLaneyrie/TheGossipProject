@@ -6,13 +6,17 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-# User.destroy_all
+User.destroy_all
+Gossip.destroy_all
+Tag.destroy_all
+JoinTableGossipTag.destroy_all
+PrivateMessage.destroy_all
 
-10.times do |index|
-  City.create(
-    name:Faker::Address.city, 
-    zip_code:Faker::Number.number(digits: 5)
-  ) 
+100.times do |index|
+  # City.create(
+  #   name:Faker::Address.city, 
+  #   zip_code:Faker::Number.number(digits: 5)
+  # ) 
   
   User.create(
     first_name: Faker::Name.first_name, 
@@ -31,11 +35,6 @@
 
   Tag.create(
     title: Faker::Vehicle.manufacture
-  ) 
-
-  JoinTableGossipTag.create(
-    gossip: Gossip.find(rand(Gossip.first.id..Gossip.last.id)),
-    tag: Tag.find(rand(Tag.first.id..Tag.last.id)) 
   ) 
 
   JoinTableGossipTag.create(
